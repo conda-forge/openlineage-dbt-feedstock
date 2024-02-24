@@ -10,16 +10,16 @@ source:
   sha256: ad821aadc0d3778902a50fc2bd9db25a88dd3e0b7b091fc0808fc2a15c44e3bc
 
 build:
-  skip: true  # [py<38]
-  script: {{ PYTHON }} -m pip install . -vv
+  noarch: python
+  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
   number: 0
 
 requirements:
   host:
-    - python
+    - python >=3.8
     - pip
   run:
-    - python
+    - python >=3.8
     - tqdm >=4.62.0
     - openlineage-integration-common =={{ version }}
 
@@ -41,3 +41,7 @@ about:
 extra:
   recipe-maintainers:
     - rxm7706
+    - millsks
+    - conda-forge/openlineage-integration-common
+    - conda-forge/openlineage-sql
+    - conda-forge/openlineage-python
