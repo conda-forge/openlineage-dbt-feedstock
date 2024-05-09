@@ -1,5 +1,5 @@
 {% set name = "openlineage-dbt" %}
-{% set version = "1.13.1" %}
+{% set version = "1.14.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/openlineage-dbt-{{ version }}.tar.gz
-  sha256: 38e7cdba38c7f1b3740f81fc52cddaf58eb8012167d32002137a19e3f7d893ba
+  sha256: 768d1cabff028ac83b93a7eb26a7233cf031f6d674289814fda00994654ad43f
 
 build:
   noarch: python
