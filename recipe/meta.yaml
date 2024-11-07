@@ -1,5 +1,6 @@
 {% set name = "openlineage-dbt" %}
 {% set version = "1.24.0" %}
+{% set python_min = python_min|default("3.9") %}
 
 package:
   name: {{ name|lower }}
@@ -16,10 +17,10 @@ build:
 
 requirements:
   host:
-    - python >=3.8
+    - python {{ python_min }}
     - pip
   run:
-    - python >=3.8
+    - python >={{ python_min }}
     - tqdm >=4.62.0
     - openlineage-integration-common =={{ version }}
 
@@ -29,6 +30,7 @@ test:
   commands:
     - pip check
   requires:
+    - python ={{ python_min }}
     - pip
     - dbt-core >=1.3.0
 
