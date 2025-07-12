@@ -44,6 +44,7 @@ tests:
       run:
         - pip
         - python ${{ python_min }}.*
+        - dbt-core >=1.0.0
     script:
       - dbt-ol --help
 
