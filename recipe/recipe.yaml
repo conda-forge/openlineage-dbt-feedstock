@@ -3,7 +3,7 @@ schema_version: 1
 
 context:
   name: openlineage-dbt
-  version: "1.35.0"
+  version: "1.36.0"
   python_min: '3.10'
 
 package:
@@ -12,10 +12,10 @@ package:
 
 source:
   url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/openlineage_dbt-${{ version }}.tar.gz
-  sha256: bb743c6d9b0263d8d0a27a7c209de1bbf06a95a804560bcecfcb6bf8a9e5c8e1
+  sha256: 1086895a9a3f9b52e0fa7dc14d6bacbf604ff7a91cd687dc369c2a24f54b31d0
 
 build:
-  number: 1
+  number: 0
   noarch: python
   script: ${{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
   python:
