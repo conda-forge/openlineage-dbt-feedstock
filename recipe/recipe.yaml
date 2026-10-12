@@ -3,7 +3,7 @@ schema_version: 1
 
 context:
   name: openlineage-dbt
-  version: 1.54.0
+  version: "1.54.0"
 
 package:
   name: ${{ name|lower }}
@@ -30,7 +30,9 @@ requirements:
     - uv-build >=0.9.4,<0.10.0
   run:
     - python >=${{ python_min }},<4.0
+    - tqdm >=4.62.0
     - openlineage-integration-common ==${{ version }}
+    - dbt-core >=1.0.0
 tests:
   - python:
       imports:
@@ -38,7 +40,7 @@ tests:
       pip_check: true
       python_version:
         - ${{ python_min }}.*
-        - '*'
+        - "*"
   - requirements:
       run:
         - pip
